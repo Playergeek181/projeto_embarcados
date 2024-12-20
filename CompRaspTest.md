@@ -15,7 +15,7 @@ sudo apt install build-essential cmake g++ libarmadillo-dev pkg-config -y
 
 ---
 
-## 2. **Transferir o Projeto para a Raspberry Pi**
+## 2. **Transferir o Projeto para a Raspberry Pi**     (EXEMPLO DO QUE NÃO FUNCIONA)
 No computador local, usar o `scp` para copiar o diretório do projeto para a Raspberry Pi:
 ```bash
 scp -r /caminho/do/projeto pi@<IP-da-Raspberry>:/home/pi/<destino-na-raspberry>
@@ -27,7 +27,7 @@ scp -r build_arm pi@192.168.113.106:/home/pi/Embarcados/ProjetoCerto/projeto_emb
 
 ---
 
-## 3. **Configurar e Compilar o Projeto na Raspberry Pi**
+## 3. **Configurar e Compilar o Projeto na Raspberry Pi**    MAIS IMPORTANTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ### Acessar o Diretório do Projeto
 ```bash
@@ -48,7 +48,7 @@ make
 
 ---
 
-## 4. **Testar o Executável**
+## 4. **Testar o Executável**      MISSING can0  --> usamos RS-232 e não rola
 Após a compilação, um executável será gerado. Teste-o:
 ```bash
 ./eesc-aero-embedded-systems
@@ -61,7 +61,7 @@ Para rodar o executável com parâmetros (exemplo):
 
 ---
 
-## 5. **Configurar RS-232 na Raspberry Pi**
+## 5. **Configurar RS-232 na Raspberry Pi**      BALELA
 
 ### Verificar Porta Serial Disponível
 ```bash
@@ -89,7 +89,7 @@ sudo reboot
 
 ---
 
-## 6. **Resolver Problemas Comuns**
+## 6. **Resolver Problemas Comuns**       MOTIVO DE NÃO RODAR O COMPILADO NO PC
 
 ### Erro: "cannot execute: required file not found"
 Verifique se o executável é compatível com a arquitetura da Raspberry Pi (ARM):
@@ -105,4 +105,7 @@ Certifique-se de que o dispositivo CAN ou RS-232 está conectado e configurado c
 
 ## 7. **Considerações Finais**
 Esta documentação cobre os passos básicos para compilar e executar o projeto. Certifique-se de ajustar os comandos e configurações conforme as especificidades do seu hardware e software.
+
+## 8. **Próximos Passos**
+Falar do conector CAN-GPIO para testar o código
 
