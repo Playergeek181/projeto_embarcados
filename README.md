@@ -1,5 +1,7 @@
 # Execução do Projeto
 
+**Este repositório foi desenvolvido pelos alunos João Aires Marsicano - 12609971 e Renan Ribeiro Machado - 12550066 para a matéria SAA0356 - Sistemas Embarcados para Veículos Aéreos.**
+
 ## Etapa 1: Instalação das Bibliotecas Lely-core
 
 1. Certifique-se de ter as ferramentas de desenvolvimento instaladas em sua máquina:
@@ -86,3 +88,12 @@
    ```bash
    scp ./eesc-aero-embedded-systems glauco@192.168.0.15:~/Documents
    ```
+
+
+
+   # Team 
+| Photo | Name | Contribution | GitHub | LinkedIn | Email |
+|-------|------|--------------|--------|----------|-------|
+| <img src="https://github.com/Playergeek181.png" width="80"> | João Aires Corrêa Fernandes Marsicano | Code development and documentation | [GitHub](https://github.com/Playergeek181) | [LinkedIn](https://www.linkedin.com/in/joao-aires-marsicano/) | joao.aires.marsicano@usp.br |
+| <img src="https://github.com/Rem-Cap.png" width="80"> | Renan Ribeiro Machado | Code development and Hardware Testing | [GitHub](https://github.com/Rem-Cap) | [LinkedIn](https://www.linkedin.com/in/renan-machado-95178a23b/) | renan_11@usp.br |
+> All members are students of Mechatronic Engineering at the University of São Paulo, School of Engineering in São Carlos.
