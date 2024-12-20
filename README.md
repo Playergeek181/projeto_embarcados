@@ -1,6 +1,6 @@
 # Objetivo do Projeto
 
-Projeto da materia SAA0356 - Sistemas Embarcados para Veículos Aéreos, ofereciada pelo departamento de aeronáutica da escola de engenharia de São Carlos e ministrada pelo Professor Doutor Glauco Caurin. O objetivo do trabalho é o desenvolvimento de uma comunicação entre o sistema EPOS P da Maxon Motors e um sistema ARM utilizando o protocolo Open CAN, para movimentação e posicionamento de um motor.
+Projeto da materia SAA0356 - Sistemas Embarcados para Veículos Aéreos, ofereciada pelo departamento de aeronáutica da escola de engenharia de São Carlos e ministrada pelo Professor Doutor Glauco Caurin. O objetivo do trabalho é o desenvolvimento de uma comunicação entre o sistema EPOS P da Maxon Motors e um sistema ARM utilizando o protocolo Open CAN, para controle e posicionamento de um motor elétrico com encoder incremental.
 
 ## Como instalar o projeto em um sistema **computador** com sistema x86_64
 
