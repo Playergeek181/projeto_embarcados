@@ -1,8 +1,10 @@
-# Execução do Projeto
+# Objetivo do Projeto
 
-**Este repositório foi desenvolvido pelos alunos João Aires Marsicano - 12609971 e Renan Ribeiro Machado - 12550066 para a matéria SAA0356 - Sistemas Embarcados para Veículos Aéreos.**
+Projeto da materia SAA0356 - Sistemas Embarcados para Veículos Aéreos, ofereciada pelo departamento de aeronáutica da escola de engenharia de São Carlos e ministrada pelo Professor Doutor Glauco Caurin. O objetivo do trabalho é o desenvolvimento de uma comunicação entre o sistema EPOS P da Maxon Motors e um sistema ARM utilizando o protocolo Open CAN, para movimentação e posicionamento de um motor.
 
-## Etapa 1: Instalação das Bibliotecas Lely-core
+## Como instalar o projeto em um sistema **computador** com sistema x86_64
+
+### Etapa 1: Instalação das Bibliotecas Lely-core
 
 1. Certifique-se de ter as ferramentas de desenvolvimento instaladas em sua máquina:
    - **GNU Build System** (configure, make, make install)
@@ -31,7 +33,7 @@
    sudo make install
    ```
 
-## Etapa 2: Criação do Docker
+### Etapa 2: Criação do Docker
 
 1. Retorne ao diretório do `dockerfile` e construa o container Debian usando o `Dockerfile`:
 
@@ -49,7 +51,7 @@
 
    > Este processo pode levar algum tempo dependendo do desempenho da sua máquina. Ao final, o container será aberto e você poderá trabalhar dentro dele.
 
-## Etapa 3: Compilação Cruzada do Código Fonte
+### Etapa 3: Compilação Cruzada do Código Fonte
 
 1. Dentro do container, acesse o diretório `projeto` e compile o código para a arquitetura `arm64`:
 
