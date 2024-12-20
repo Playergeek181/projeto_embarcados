@@ -1,8 +1,8 @@
 # Execução do Projeto
 
-## 1. Instalação das Bibliotecas Lely-core
+## Etapa 1: Instalação das Bibliotecas Lely-core
 
-1. Certifique-se de que você possui as ferramentas de desenvolvimento instaladas na sua máquina:
+1. Certifique-se de ter as ferramentas de desenvolvimento instaladas em sua máquina:
    - **GNU Build System** (configure, make, make install)
    - **autotools** (autoconf, automake e libtool)
    - **Toolchain**:
@@ -11,7 +11,7 @@
    sudo apt-get install crossbuild-essential-arm64
    ```
 
-2. Comece pela raiz do projeto, clone o repositório da Lely-core dentro da pasta `dockerfile` e acesse sua pasta:
+2. Clone o repositório da Lely-core na pasta `dockerfile` e acesse o diretório clonado:
 
    ```bash
    cd /dockerfile
@@ -19,7 +19,7 @@
    cd lely-core
    ```
 
-3. Execute a sequência de configuração e compilação das bibliotecas em C++ para ARM:
+3. Configure e compile as bibliotecas em C++ para a arquitetura ARM:
 
    ```bash
    autoreconf -i
@@ -29,27 +29,27 @@
    sudo make install
    ```
 
-## 2. Criação do Docker
+## Etapa 2: Criação do Docker
 
-1. Navegue de volta para a pasta do `dockerfile` e execute o arquivo `Dockerfile` para criar o container Debian:
+1. Retorne ao diretório do `dockerfile` e construa o container Debian usando o `Dockerfile`:
 
    ```bash
    cd ../../
    docker build . -t build_manopla -f ./Dockerfile
    ```
 
-2. Após a criação bem-sucedida do sistema, volte para a raiz do projeto e instancie o container copiando o projeto inteiro para uma pasta chamada `projeto`:
+2. Depois que o container for criado com sucesso, copie o projeto inteiro para uma pasta chamada `projeto` e inicie o container:
 
    ```bash
    cd ..
    docker run --rm -it -v $(pwd):/projeto build_manopla bash
    ```
 
-   > Esta operação pode demorar, dependendo da máquina do usuário. Assim que for concluída, o container será aberto e você poderá trabalhar dentro dele.
+   > Este processo pode levar algum tempo dependendo do desempenho da sua máquina. Ao final, o container será aberto e você poderá trabalhar dentro dele.
 
-## 3. Compilação Cruzada do Código Fonte
+## Etapa 3: Compilação Cruzada do Código Fonte
 
-1. Dentro do container, navegue até a pasta `projeto` que contém os arquivos fonte e realize a compilação para a arquitetura `arm64`:
+1. Dentro do container, acesse o diretório `projeto` e compile o código para a arquitetura `arm64`:
 
    ```bash
    cd /projeto
@@ -58,13 +58,13 @@
    make
    ```
 
-2. Para verificar se a compilação foi bem-sucedida, execute o seguinte comando para verificar as propriedades do executável gerado:
+2. Verifique se a compilação foi bem-sucedida utilizando o comando abaixo para inspecionar o executável gerado:
 
    ```bash
    file eesc-aero-embedded-systems
    ```
 
-   Exemplo de saída esperada:
+   Saída esperada:
 
    ```
    eesc-aero-embedded-systems: ELF 32-bit LSB pie executable, ARM,
@@ -73,16 +73,16 @@
    for GNU/Linux 3.2.0, with debug_info, not stripped
    ```
 
-3. Para enviar o executável gerado para o sistema embarcado, certifique-se de que ambos os dispositivos estão conectados à mesma rede de internet. Saiba também o IP de conexão do dispositivo de destino e o usuário padrão de conexão:
+3. Para transferir o executável ao sistema embarcado, conecte ambos os dispositivos à mesma rede e obtenha o IP e o usuário do dispositivo de destino. Use o comando `scp` para realizar a transferência:
 
    ```bash
    scp [source username@IP]:/[directory and file name] [destination username@IP]:/[destination directory]
    ```
 
-   Exemplo:
+   Exemplo prático:
 
-   Gostaríamos de enviar o arquivo `eesc-aero-embedded-systems` para a pasta `Documents` na Raspberry conectada no endereço `192.168.0.15` utilizando o usuário `glauco`:
+   Enviar o arquivo `eesc-aero-embedded-systems` para a pasta `Documents` da Raspberry no endereço IP `192.168.0.15` com o usuário `glauco`:
 
    ```bash
    scp ./eesc-aero-embedded-systems glauco@192.168.0.15:~/Documents
-   
+   ```
