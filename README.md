@@ -7,15 +7,17 @@ Projeto da materia SAA0356 - Sistemas Embarcados para Veículos Aéreos, ofereci
 ### Etapa 1: Instalação das Bibliotecas Lely-core
 
 1. Certifique-se de ter as ferramentas de desenvolvimento instaladas em sua máquina:
+
    - **GNU Build System** (configure, make, make install)
    - **autotools** (autoconf, automake e libtool)
    - **Toolchain**:
+
 
    ```bash
    sudo apt-get install crossbuild-essential-arm64
    ```
 
-2. Clone o repositório da Lely-core na pasta `dockerfile` e acesse o diretório clonado:
+3. Clone o repositório da Lely-core na pasta `dockerfile` e acesse o diretório clonado:
 
    ```bash
    cd /dockerfile
@@ -23,7 +25,7 @@ Projeto da materia SAA0356 - Sistemas Embarcados para Veículos Aéreos, ofereci
    cd lely-core
    ```
 
-3. Configure e compile as bibliotecas em C++ para a arquitetura ARM:
+4. Configure e compile as bibliotecas em C++ para a arquitetura ARM:
 
    ```bash
    autoreconf -i
@@ -121,7 +123,22 @@ cmake ..
 make
 ```
 
----
+### Etapa 3: Testar o Executável      
+
+Foi utilizado o cabo de conexão RS-232 com um adapatador CH340, porém por conta do codigo ser para o protocolo CAN não foi possivel testar.
+
+Após a compilação, um executável será gerado. Teste-o:
+```bash
+./eesc-aero-embedded-systems
+```
+
+Rodando o seguinte executavel sem o sistema CAN conectado retorna o seguinte erro `MISSING can0`
+
+Para rodar o executável com parâmetros (exemplo):
+```bash
+./eesc-aero-embedded-systems can0 dlqr constant-zero
+```
+
 
 
 ---
