@@ -139,12 +139,12 @@ Para rodar o executável com parâmetros (exemplo):
 ./eesc-aero-embedded-systems can0 dlqr constant-zero
 ```
 
-Para rodar o sistema seria necessario um adatador do protocolo CAN para a Raspberry, como o adaptador a seguir:
+Para rodar o sistema seria necessario um adatador do protocolo CAN para a Raspberry, a esquerda o adaptador e na direita o sistema usado para os testes:
 
-<p align="left">
-  <img src="2164430334d024f8831-removebg-preview.png" width="400">
+<p align="center">
+  <img src="./docs/adaptador.png" width="400">
+  <img src="./docs/kit_embarcados.png" width="400">
 </p>
-
 
 
 ---
