@@ -91,7 +91,40 @@ Projeto da materia SAA0356 - Sistemas Embarcados para Veículos Aéreos, ofereci
    scp ./eesc-aero-embedded-systems glauco@192.168.0.15:~/Documents
    ```
 
+## Como instalar o projeto em um sistema **Raspberry Pi** com sistema ARM
 
+### Etapa 1: Preparar o Ambiente de Desenvolvimento
+
+1. Instalar Dependências Necessárias
+Na Raspberry Pi:
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install build-essential cmake g++ libarmadillo-dev pkg-config -y
+```
+
+### Etapa 2: Configurar e Compilar o Projeto na **Raspberry Pi**
+
+1. Acessar o Diretório do Projeto
+```bash
+cd /home/pi/Embarcados/ProjetoCerto/projeto_embarcados
+```
+
+2. Configurar o Build com CMake
+Criar um diretório de build e configurar o projeto:
+```bash
+mkdir build && cd build
+cmake ..
+```
+
+3. Compilar o Projeto
+```bash
+make
+```
+
+---
+
+
+---
 
    # Team 
 | Photo | Name | Contribution | GitHub | LinkedIn | Email |
